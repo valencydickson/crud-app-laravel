@@ -32137,8 +32137,16 @@ select {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.avatar {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 @media screen and (min-width:768px){
-  header {
+  header,main {
     max-width: 600px !important;
   }
 }

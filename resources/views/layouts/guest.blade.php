@@ -19,7 +19,6 @@
 </head>
 
 <body>
-
     <header class="container mx-auto flex justify-between items-center p-5 bg-gray-100">
         <h1 class="text-2xl font-semibold"><a href="{{url('/')}}">Products</a></h1>
         <nav class="flex justify-end">
@@ -27,7 +26,11 @@
 
             @auth
             <a href="{{url('/dashboard')}}" class="pl-4">My Account</a>
-            <a href="{{url('/logout')}}" class="pl-4">Logout</a>
+            <a href="{{ route('logout') }}" class="pl-4"
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
 
             @else
             <a href="{{route('login')}}" class="pl-4">Login</a>
@@ -41,9 +44,9 @@
         </nav>
     </header>
 
-    <div>
+    <main class="container mx-auto px-5 py-12">
         {{ $slot }}
-    </div>
+    </main>
 </body>
 
 </html>
