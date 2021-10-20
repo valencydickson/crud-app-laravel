@@ -17,6 +17,7 @@ class UserController extends Controller
             $filename = $request->image->getClientOriginalName();
             $request->image->storeAs('images', $filename, 'public');
             User::where("id", $id)->update(["avatar" => $filename]);
+            $request->session()->flash('uploadMessage', 'Avatar was successful changed!');
         }
         return redirect()->back();
 

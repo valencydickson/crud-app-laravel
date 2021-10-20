@@ -25,7 +25,7 @@
             @if(Route::has("login"))
 
             @auth
-            <a href="{{url('/dashboard')}}" class="pl-4">My Account</a>
+            <a href="{{url('/dashboard')}}" class="pl-4">Dashboard</a>
             <a href="{{ route('logout') }}" class="pl-4"
                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

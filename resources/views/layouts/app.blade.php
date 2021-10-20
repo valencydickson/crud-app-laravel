@@ -8,6 +8,9 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    {{-- Fontawesome --}}
+    <script src="https://kit.fontawesome.com/51416ae4aa.js" crossorigin="anonymous"></script>
+
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
@@ -20,9 +23,9 @@
 
 <body>
     <header class="container mx-auto flex justify-between items-center p-5 bg-gray-100">
-        <h1 class="text-2xl font-semibold"><a href="{{url('/')}}">Dashboard</a></h1>
+        <h1 class="text-2xl font-semibold"><a href="{{url('/')}}"></a>Products</h1>
         <nav class="flex justify-end">
-            <div>{{ ucfirst(Auth::user()->username) }}</div>
+            <div>Dashboard</div>
             <a href="{{ route('logout') }}" class="pl-4"
                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -31,7 +34,7 @@
         </nav>
     </header>
     <!-- Page Content -->
-    <main class="container mx-auto px-5 py-12">
+    <main class="container mx-auto  px-5 py-12 shadow-md">
         {{ $slot }}
     </main>
     </div>
