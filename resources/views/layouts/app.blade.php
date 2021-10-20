@@ -23,7 +23,7 @@
 
 <body>
     <header class="container mx-auto flex justify-between items-center p-5 bg-gray-100">
-        <h1 class="text-2xl font-semibold"><a href="{{url('/')}}"></a>Products</h1>
+        <h1 class="text-2xl font-semibold"><a href="{{url('/')}}">Products</a></h1>
         <nav class="flex justify-end">
             <div>Dashboard</div>
             <a href="{{ route('logout') }}" class="pl-4"

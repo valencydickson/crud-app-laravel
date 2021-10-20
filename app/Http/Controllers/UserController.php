@@ -20,7 +20,6 @@ class UserController extends Controller
             $request->session()->flash('uploadMessage', 'Avatar was successful changed!');
         }
         return redirect()->back();
-
     }
     //delete existing image
     protected function deleteAvatar()
