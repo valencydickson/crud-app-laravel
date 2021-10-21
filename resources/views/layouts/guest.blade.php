@@ -8,8 +8,24 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    {{-- Fontawesome --}}
+    <script src="https://kit.fontawesome.com/51416ae4aa.js" crossorigin="anonymous"></script>
+
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+
+    {{-- Bootstrap --}}
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -20,12 +36,13 @@
 
 <body>
     <header class="container mx-auto flex justify-between items-center p-5 bg-gray-100">
-        <h1 class="text-2xl font-semibold"><a href="{{url('/')}}">Products</a></h1>
+        <h1 class="text-2xl font-semibold"><a href="{{url('/')}}">Home</a></h1>
         <nav class="flex justify-end">
             @if(Route::has("login"))
 
             @auth
             <a href="{{url('/dashboard')}}" class="pl-4">Dashboard</a>
+            <a href="{{url('/products')}}" class="pl-4">Products</a>
             <a href="{{ route('logout') }}" class="pl-4"
                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
