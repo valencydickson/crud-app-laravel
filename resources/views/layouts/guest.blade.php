@@ -35,30 +35,51 @@
 </head>
 
 <body>
-    <header class="container mx-auto flex justify-between items-center p-5 bg-gray-100">
-        <h1 class="text-2xl font-semibold"><a href="{{url('/')}}">Home</a></h1>
-        <nav class="flex justify-end">
-            @if(Route::has("login"))
+    <header class="container">
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <h1><a href="{{url('/')}}" class="navbar-brand">Home</a></h1>
 
-            @auth
-            <a href="{{url('/dashboard')}}" class="pl-4">Dashboard</a>
-            <a href="{{url('/products')}}" class="pl-4">Products</a>
-            <a href="{{ route('logout') }}" class="pl-4"
-                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-            </form>
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-            @else
-            <a href="{{route('login')}}" class="pl-4">Login</a>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav  ml-auto">
+                    @if(Route::has("login"))
+                    @auth
+                    <li class="nav-item">
+                        <a href="{{url('/dashboard')}}" class="nav-link">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url('/products')}}" class="nav-link">Products</a>
+                    </li>
 
-            @if(Route::has("register"))
-            <a href="{{route('register')}}" class="pl-4">Register</a>
-            @endif
+                    <li class="nav-item">
+                        <a href="{{ route('logout') }}" class="nav-link"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </li>
+                    @else
+                    <li class="nav-item">
+                        <a href="{{route('login')}}" class="nav-link">Login</a>
+                    </li>
 
-            @endauth
-            @endif
+                    @if(Route::has("register"))
+                    <li class="nav-item">
+                        <a href="{{route('register')}}" class="nav-link">Register</a>
+                    </li>
+                    @endif
+                    @endauth
+                    @endif
+                </ul>
+            </div>
         </nav>
+
+
     </header>
 
     <main class="container mx-auto px-5 py-12">

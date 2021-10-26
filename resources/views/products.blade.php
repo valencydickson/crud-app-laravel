@@ -9,7 +9,7 @@
                     <th>Title</th>
                     <th>Description</th>
                     <th>Price</th>
-                    <th>Action</th>
+                    <th style="text-align: center">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,9 +19,7 @@
                     <td>{{$product->description}}</td>
                     <td>{{$product->price}}</td>
                     <td class="flex">
-                        <form action="">
-                            <button class="btn btn-secondary">Edit</button>
-                        </form>
+                        <button class="btn btn-secondary mx-2">Edit</button>
                         <form action="">
                             <button class="btn btn-danger">Delete</button>
                         </form>

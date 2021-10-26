@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Products;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductsController extends Controller
 {
     public function showProducts()
     {
-        $products = Products::all();
+        $products = Products::where("user_id", Auth::id())->get();
 
         return view("products")->with("products", $products);
     }
@@ -18,6 +19,7 @@ class ProductsController extends Controller
     {
         Products::create([
             'title' => $request->title,
+            'user_id' => Auth::id(),
             'description' => $request->description,
             'price' => $request->price,
         ]);
