@@ -11,7 +11,7 @@
 
             <!-- Modal body -->
             <div class="modal-body">
-                <form action="/products/create" method="post">
+                <form action="/create" method="post">
                     @csrf
                     <div class="form-group">
                         <label for="title">Title</label>

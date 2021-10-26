@@ -1,4 +1,4 @@
-<form action="">
+<form action="/search">
     <div class="input-group mb-3">
         <input type="text" class="form-control" name="search" placeholder="Search product">
         <div class="input-group-append">

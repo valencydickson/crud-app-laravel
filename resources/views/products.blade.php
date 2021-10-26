@@ -1,8 +1,10 @@
 <x-guest-layout>
     @if (Auth::user())
-    <h2 class="mb-3 text-xl font-bold">Products</h2>
     <div>
-        <x-form></x-form>
+        <x-form>$search</x-form>
+        @if ($search)
+        <p class="mt-3 text-success">Results of all {{$search}} products</p>
+        @endif
         <table class="table table-hover mt-3">
             <thead>
                 <tr>
@@ -14,14 +16,16 @@
             </thead>
             <tbody>
                 @foreach ($products as $product)
-                <tr>
+                <tr class="align-items-center">
                     <td>{{$product->title}}</td>
                     <td>{{$product->description}}</td>
                     <td>{{$product->price}}</td>
                     <td class="flex">
-                        <button class="btn btn-secondary mx-2">Edit</button>
+                        <a href="" class="mx-3">
+                            <i class="far fa-edit text-secondary"></i>
+                        </a>
                         <form action="">
-                            <button class="btn btn-danger">Delete</button>
+                            <a href=""><i class="fas fa-trash text-danger"></i></a>
                         </form>
                     </td>
                 </tr>
@@ -33,7 +37,6 @@
     <div>
         <x-modal></x-modal>
     </div>
-
     @else
     <p>Register to add products</p>
     @endif

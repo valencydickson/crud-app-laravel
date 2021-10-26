@@ -12,7 +12,9 @@ class ProductsController extends Controller
     {
         $products = Products::where("user_id", Auth::id())->get();
 
-        return view("products")->with("products", $products);
+        $search = $request->search ?? "";
+
+        return view("products")->with(["products" => $products, "search" => $search]);
     }
 
     public function createProduct(Request $request)
@@ -23,6 +25,25 @@ class ProductsController extends Controller
             'description' => $request->description,
             'price' => $request->price,
         ]);
-        return redirect()->back();
+
+        $products = Products::where("user_id", Auth::id())->get();
+
+        $search = $request->search ?? "";
+
+        return view("products")->with(["products" => $products, "search" => $search]);
+
+    }
+
+    public function searchProduct(Request $request)
+    {
+        $search = $request->search;
+
+        $validated = $request->validate([
+            'search' => 'required',
+
+        ]);
+
+        $products = Products::where('title', 'LIKE', '%' . $search . '%')->get();
+        return view("products")->with(["products" => $products, "search" => $search]);
     }
 }

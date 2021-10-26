@@ -37,7 +37,7 @@
 <body>
     <header class="container">
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-            <h1><a href="{{url('/')}}" class="navbar-brand">Home</a></h1>
+            <h1><a href="{{url('/')}}" class="navbar-brand">Products</a></h1>
 
             <!-- Toggler/collapsibe Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -52,9 +52,7 @@
                     <li class="nav-item">
                         <a href="{{url('/dashboard')}}" class="nav-link">Dashboard</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="{{url('/products')}}" class="nav-link">Products</a>
-                    </li>
+
 
                     <li class="nav-item">
                         <a href="{{ route('logout') }}" class="nav-link"
@@ -78,8 +76,6 @@
                 </ul>
             </div>
         </nav>
-
-
     </header>
 
     <main class="container mx-auto px-5 py-12">
