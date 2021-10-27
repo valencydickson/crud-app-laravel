@@ -21,11 +21,14 @@
                     <td>{{$product->description}}</td>
                     <td>{{$product->price}}</td>
                     <td class="flex">
-                        <a href="" class="mx-3">
-                            <i class="far fa-edit text-secondary"></i>
+                        <a href="/edit/{{$product->id}}" class="mx-3">
+                            <i class=" far fa-edit text-secondary"></i>
                         </a>
-                        <form action="">
-                            <a href=""><i class="fas fa-trash text-danger"></i></a>
+                        <form action="/delete/{{$product->id}}" method="post">
+                            @csrf
+                            @method("delete")
+                            <button type="submit"><i class="fas fa-trash text-danger"></i></button>
+
                         </form>
                     </td>
                 </tr>
@@ -35,9 +38,12 @@
         </table>
     </div>
     <div>
-        <x-modal></x-modal>
+        <x-createModal></x-createModal>
+
     </div>
     @else
-    <p>Register to add products</p>
+    <div style="text-align: center">
+        <h2><a href="/register">Register</a> or <a href="/login">Login</a> to add product.</h2>
+    </div>
     @endif
 </x-guest-layout>

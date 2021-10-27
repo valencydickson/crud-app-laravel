@@ -19,6 +19,12 @@ Route::get('/', [ProductsController::class, "showProducts"]);
 
 Route::post('/create', [ProductsController::class, "createProduct"]);
 
+Route::get('/edit/{id}', [ProductsController::class, "editProduct"]);
+
+Route::put('/create/edited/{id}', [ProductsController::class, "createEditedProduct"]);
+
+Route::delete('/delete/{id}', [ProductsController::class, "deleteProduct"]);
+
 Route::get('/search', [ProductsController::class, "searchProduct"]);
 
 Route::post('/upload', [UserController::class, "uploadAvatar"]);

@@ -7,5 +7,5 @@
     </div>
 </form>
 
-<button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">Create New
+<button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#createModal">Create New
     Product</button>
