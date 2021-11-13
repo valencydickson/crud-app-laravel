@@ -10,9 +10,8 @@ class ProductsController extends Controller
 {
     public function showProducts()
     {
-        $products = Products::where("user_id", Auth::id())->get();
-        $search = $request->search ?? "";
-        return view("products")->with(["products" => $products, "search" => $search]);
+        $products = Products::where("user_id", Auth::id())->orderByDesc('id')->get();
+        return view("products")->with(["products" => $products]);
     }
 
     public function createProduct(Request $request)
@@ -25,8 +24,8 @@ class ProductsController extends Controller
         ]);
 
         $products = Products::where("user_id", Auth::id())->get();
-        $search = $request->search ?? "";
-        return redirect("/")->with(["products" => $products, "search" => $search]);
+
+        return redirect("/")->with(["products" => $products]);
 
     }
 
@@ -39,7 +38,8 @@ class ProductsController extends Controller
 
         $search = $request->search;
         $products = Products::where('title', 'LIKE', '%' . $search . '%')->get();
-        return redirect("/")->with(["products" => $products, "search" => $search]);
+        return view("products")->with(["products" => $products, "search" => $search]);
+
     }
 
     public function editProduct(Request $request)
@@ -53,8 +53,8 @@ class ProductsController extends Controller
         Products::where("id", $request->id)->update(["title" => $request->title, "description" => $request->description, "price" => $request->price]);
 
         $products = Products::where("user_id", Auth::id())->get();
-        $search = $request->search ?? "";
-        return redirect("/")->with(["products" => $products, "search" => $search]);
+
+        return redirect("/")->with(["products" => $products]);
 
     }
 
@@ -63,7 +63,7 @@ class ProductsController extends Controller
         Products::where("id", $request->id)->delete();
 
         $products = Products::where("user_id", Auth::id())->get();
-        $search = $request->search ?? "";
-        return redirect("/")->with(["products" => $products, "search" => $search]);
+
+        return redirect("/")->with(["products" => $products]);
     }
 }

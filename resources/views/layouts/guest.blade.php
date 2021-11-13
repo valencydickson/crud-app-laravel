@@ -35,7 +35,7 @@
 </head>
 
 <body>
-    <header class="container mt-5">
+    <header class="container mt-5 px-0">
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
             <h1><a href="{{url('/')}}" class="navbar-brand">Products</a></h1>
 

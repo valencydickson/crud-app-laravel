@@ -1,9 +1,13 @@
 <x-guest-layout>
     @if (Auth::user())
     <div>
-        <x-form>$search</x-form>
-        @if ($search)
-        <p class="mt-3 text-success">Results of all {{$search}} products</p>
+        <x-form></x-form>
+        @if (isset($search) && count($products)>0)
+        <p class="my-3 text-success">Results of "{{$search}}" products</p>
+        <a href="/" class="btn btn-outline-secondary">See all products</a>
+        @elseif (isset($search) ) <p class="my-3 text-success">No product found</p>
+        <a href="/" class="btn btn-outline-secondary">See all products</a>
+
         @endif
         <table class="table table-hover mt-3">
             <thead>
