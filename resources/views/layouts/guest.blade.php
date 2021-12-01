@@ -8,6 +8,9 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    {{-- Allowed mixed content --}}
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
     {{-- Fontawesome --}}
     <script src="https://kit.fontawesome.com/51416ae4aa.js" crossorigin="anonymous"></script>
 
