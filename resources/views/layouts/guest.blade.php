@@ -35,9 +35,9 @@
 </head>
 
 <body>
-    <header class="container mt-5 px-0">
+    <header class="container px-0">
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-            <h1><a href="{{url('/')}}" class="navbar-brand">Products</a></h1>
+            <h1><a href="{{url('/')}}" class="navbar-brand">Products CRUD</a></h1>
 
             <!-- Toggler/collapsibe Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -78,9 +78,12 @@
         </nav>
     </header>
 
-    <main class="container mx-auto px-5 py-12">
+    <main class="container mx-auto py-12 shadow">
         {{ $slot }}
     </main>
+    <footer class="container mx-auto mt-5" style="text-align: center">
+        <p>Copyright © 2021 <a href="https://valencydickson.xyz/" target="_blank">Valency Dickson</a></p>
+    </footer>
 </body>
 
 </html>
