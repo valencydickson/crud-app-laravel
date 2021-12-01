@@ -6,6 +6,7 @@
             <form action="/upload" method="post" enctype="multipart/form-data">
                 @csrf
                 <input type="file" name="image"><br>
+                <span>Only up to 2 MB</span><br>
                 <input type="submit" value="Upload" class="mt-3 py-2 px-6 bg-blue-700 text-white">
             </form>
             @if(session()->has('uploadMessage'))
@@ -19,7 +20,7 @@
                 <p class="mr-3 font-bold">Name: </p>
                 <p>{{Auth::user()->name}}</p>
             </div>
-            <i class="far fa-edit"></i>
+
         </div>
 
         <div class="flex justify-between items-center mb-2">
@@ -27,7 +28,7 @@
                 <p class="mr-3 font-bold">Email: </p>
                 <p>{{Auth::user()->email}}</p>
             </div>
-            <i class="far fa-edit"></i>
+
         </div>
 
         <div class="flex justify-between items-center mb-2">
@@ -35,7 +36,7 @@
                 <p class="mr-3 font-bold">Username: </p>
                 <p>{{Auth::user()->username}}</p>
             </div>
-            <i class="far fa-edit"></i>
+
         </div>
     </div>
 </div>

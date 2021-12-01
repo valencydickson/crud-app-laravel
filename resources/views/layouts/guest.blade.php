@@ -50,7 +50,7 @@
                     @if(Route::has("login"))
                     @auth
                     <li class="nav-item">
-                        <a href="{{url('/dashboard')}}" class="nav-link">Dashboard</a>
+                        <a href="{{url('/dashboard')}}" class="nav-link">{{ucfirst(Auth::user()->username)}}</a>
                     </li>
 
 

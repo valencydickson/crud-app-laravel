@@ -10,29 +10,33 @@
 
         @endif
         <table class="table table-hover mt-3">
-            <thead>
+            @if (count($products) > 0)
+            <thead style="text-align: center">
                 <tr>
                     <th>Title</th>
                     <th>Description</th>
                     <th>Price</th>
-                    <th style="text-align: center">Action</th>
+                    <th colspan="2">Action</th>
                 </tr>
             </thead>
-            <tbody>
+            @endif
+
+            <tbody style="text-align: center">
                 @foreach ($products as $product)
                 <tr class="align-items-center">
                     <td>{{$product->title}}</td>
                     <td>{{$product->description}}</td>
                     <td>{{$product->price}}</td>
-                    <td class="flex">
+                    <td>
                         <a href="/edit/{{$product->id}}" class="mx-3">
                             <i class=" far fa-edit text-secondary"></i>
                         </a>
+                    </td>
+                    <td>
                         <form action="/delete/{{$product->id}}" method="post">
                             @csrf
                             @method("delete")
                             <button type="submit"><i class="fas fa-trash text-danger"></i></button>
-
                         </form>
                     </td>
                 </tr>
