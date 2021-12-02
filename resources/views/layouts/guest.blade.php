@@ -84,7 +84,7 @@
     <main class="container mx-auto py-12 shadow">
         {{ $slot }}
     </main>
-    <footer class="container mx-auto mt-5" style="text-align: center">
+    <footer class="container mx-auto mt-5 mb-3" style="text-align: center">
         <p>Copyright © 2021 <a href="https://valencydickson.xyz/" target="_blank">Valency Dickson</a></p>
     </footer>
 </body>

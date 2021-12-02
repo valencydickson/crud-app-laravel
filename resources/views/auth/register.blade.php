@@ -7,7 +7,7 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('register') }}" autocomplete="off">
             @csrf
 
             <!-- Name -->
@@ -25,12 +25,7 @@
             <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
 
 
-            <!-- Username -->
 
-            <x-label for="name" :value="__('Username')" class="mt-4" />
-
-            <x-input id="name" class="block mt-1 w-full" type="text" name="username" :value="old('username')" required
-                autofocus />
 
 
             <!-- Password -->
