@@ -1,6 +1,6 @@
 <div>
     <div class="flex items-center">
-        <img src="{{Auth::user()->avatar == NULL ? asset('/storage/images/avatar.png'):asset('/storage/images/' . Auth::user()->avatar)}}"
+        <img src="{{Auth::user()->avatar == NULL ? github.com/valencydickson/crud-app-laravel/blob/main/public/images/avatar.png :asset('/storage/images/' . Auth::user()->avatar)}}"
             alt="Avatar" class="mr-6 avatar">
         <div>
             <form action="/upload" method="post" enctype="multipart/form-data">
