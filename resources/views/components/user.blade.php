@@ -1,8 +1,8 @@
 <div>
     <div class="flex items-center">
         @if (Auth::user()->avatar == NULL )
-        <img src="https://github.com/valencydickson/crud-app-laravel/blob/main/avatar.png" alt="Avatar"
-            class="mr-6 avatar">
+        <img src="https://www.kindpng.com/picc/m/78-785827_user-profile-avatar-login-account-male-user-icon.png"
+            alt="Avatar" class="mr-6 avatar">
         @else
         <img src="{{asset('/storage/images/' . Auth::user()->avatar)}}" alt="Avatar" class="mr-6 avatar">
         @endif
