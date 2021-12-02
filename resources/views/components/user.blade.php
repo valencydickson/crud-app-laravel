@@ -1,7 +1,11 @@
 <div>
     <div class="flex items-center">
-        <img src="{{Auth::user()->avatar == NULL ? github.com/valencydickson/crud-app-laravel/blob/main/public/images/avatar.png :asset('/storage/images/' . Auth::user()->avatar)}}"
-            alt="Avatar" class="mr-6 avatar">
+        @if (Auth::user()->avatar == NULL )
+        <img src="https://github.com/valencydickson/crud-app-laravel/blob/main/avatar.png" alt="Avatar"
+            class="mr-6 avatar">
+        @else
+        <img src="{{asset('/storage/images/' . Auth::user()->avatar)}}" alt="Avatar" class="mr-6 avatar">
+        @endif
         <div>
             <form action="/upload" method="post" enctype="multipart/form-data">
                 @csrf
