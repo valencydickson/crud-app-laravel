@@ -14,15 +14,14 @@
 
             <x-label for="name" :value="__('Name')" class="mt-4" />
 
-            <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required
-                autofocus />
+            <x-input id="name" class="block mt-1 w-full" type="text" name="name" required autofocus />
 
 
             <!-- Email Address -->
 
             <x-label for="email" :value="__('Email')" class="mt-4" />
 
-            <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+            <x-input id="email" class="block mt-1 w-full" type="email" name="email" required />
 
 
 
