@@ -19,6 +19,17 @@ Users should be able to:
 
 - Live Site URL: [Product Crud App](https://valency-crud-app.herokuapp.com/)
 
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Bootstrap
+- Laravel
+- MySQL
+
+### Hosted on
+- Heroku
+
 ## Author
 
 - Website - [Valency Dickson](https://valencydickson.xyz/)
