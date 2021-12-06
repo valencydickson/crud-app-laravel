@@ -12,6 +12,8 @@ Users should be able to:
 - Edit a product
 - Delete a product
 
+<img src="https://github.com/valencydickson/crud-app-laravel/blob/main/screenshot.PNG" alt="register-page" width="600px"/>
+
 
 ### Links
 
