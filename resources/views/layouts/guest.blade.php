@@ -8,6 +8,10 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <link rel="shortcut icon"
+        href="https://p.kindpng.com/picc/s/325-3256258_purchase-svg-free-product-icon-png-transparent-png.png"
+        type="image/x-icon">
+
     {{-- Allowed mixed content --}}
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
